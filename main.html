@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ModFine</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: transparent; /* wichtig, dass Video sichtbar ist */
+  }
+
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* hinter Content, aber über Body */
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* etwas größer für große Schrift */
+    background: rgba(44, 62, 80, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 30px;          /* Abstand zwischen Links */
+    font-weight: bold;
+    font-family: 'Press Start 2P', monospace; /* Minecraft-ähnliche Schrift */
+    font-size: 18px;          /* deutlich größer */
+    transition: color 0.2s;
+  }
+
+  .navbar a:hover {
+    color: #12e6c9;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    padding-top: 400px; /* genug Abstand für Navbar */
+    font-size: 20px;
+  }
+
+  /* Optional: dunkler Overlay für besseren Textkontrast */
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- Hintergrundvideo -->
+<video id="bg-video" autoplay muted loop>
+  <source src="files/galaxy.mp4" type="video/mp4">
+  Dein Browser unterstützt kein HTML5-Video.
+</video>
+
+<div id="overlay"></div>
+
+<div class="navbar">
+  <a href="main.html">Home</a>
+  <a href="mod.html">Mod Downloader</a>
+  <a href="#modpack">Modpack Downloader</a>
+  <a href="https://modrinth.com/">Modrinth</a>
+</div>
+
+<div class="content">
+  <h1>Willkommen bei ModFine</h1>
+  <p>Schnell und einfach Mods einzeln und als Pack erstellen, suchen und downloaden!</p>
+</div>
+
+</body>
+</html>
